@@ -31,7 +31,7 @@ function Deals() {
     .sort((a, b) => b.discountPercentage - a.discountPercentage);
   return (
     <>
-      <section className="mx-auto mt-6 max-w-7xl px-4">
+      <section className="mx-auto mt-6 max-w-7xl">
         <div className="relative overflow-hidden rounded-xl bg-linear-to-b from-red-900 via-red-800 to-red-700 px-6 py-10 text-center">
           {floaters.map((f, i) => (
             <span

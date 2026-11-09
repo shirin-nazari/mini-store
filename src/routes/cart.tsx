@@ -13,7 +13,7 @@ function Cart() {
   const removeItem = useCartStore((s) => s.removeItem);
   if (items.length === 0) {
     return (
-      <section className="mx-auto max-w-7xl px-4 py-16 text-center">
+      <section className="mx-auto max-w-7xl  py-16 text-center">
         <div className="w-44 h-44 bg-rose-50 px-2 rounded-full mx-auto my-2">
           <img
             src="/icon-shop.png"

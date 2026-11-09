@@ -86,12 +86,11 @@ const ProductListLayout = ({
     );
     setPage(1);
   };
-  const linkBase = "block rounded-lg px-3 py-2 text-sm";
+  const linkBase = "block rounded-lg px-1 py-2 text-sm";
   const active = "bg-gray-50 font-medium text-rose-700";
   const inActive = "text-gray-600 hover:text-gray-500";
   return (
-    // <section className="mx-auto max-w-7xl px-4 py-6">
-    <section className="mx-auto max-w-7xl px-4 pb-6">
+    <section className="mx-auto max-w-7xl px-4 pb-6 xl:px-0">
       <div
         className={`grid items-start gap-6 ${
           showSidebar ? "md:grid-cols-[220px_1fr]" : ""
@@ -99,7 +98,7 @@ const ProductListLayout = ({
       >
         {/* Aside */}
         {showSidebar && (
-          <aside className="sticky top-0 hidden h-screen flex-col overflow-hidden border-r-2 border-gray-100 py-6 pr-4 md:flex">
+          <aside className="sticky top-0 hidden h-screen flex-col overflow-hidden border-r-2 border-gray-100 py-6  md:flex">
             <div className="max-h-80  overflow-y-auto scrollbar-thin scrollbar-thumb-gray-100 scrollbar-track-transparent">
               <h2 className="font-semibold mb-3 text-gray-800">Categories</h2>
               <nav className="space-y-1">
@@ -138,7 +137,7 @@ const ProductListLayout = ({
                     </button>
                   )}
                 </div>
-                <ul className="max-h-80 space-y-2 overflow-y-auto pr-1 scrollbar-thin scrollbar-thumb-gray-100 scrollbar-track-transparent">
+                <ul className="max-h-80 space-y-2 overflow-y-auto  scrollbar-thin scrollbar-thumb-gray-100 scrollbar-track-transparent">
                   {brands.map(([brand, count]) => (
                     <li key={brand}>
                       <label className="cursor-pointer flex items-center gap-1 text-sm ">
@@ -276,7 +275,7 @@ const ProductListLayout = ({
               No products match your filters.
             </p>
           ) : (
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+            <div className="grid grid-cols-2 gap-5 md:grid-cols-3">
               {pagedProducts.map((p) => (
                 <ProductCard key={p.id} product={p} />
               ))}

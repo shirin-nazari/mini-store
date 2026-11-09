@@ -21,11 +21,11 @@ function Home() {
     queryKey: ["products"],
     queryFn: () => getProducts(4),
   });
-  if (isLoading) return <PageLoading />;
-  if (isError || !data) return <PageError onRetry={() => refetch()} />;
+
   return (
-    <div className="container mx-auto px-auto">
+    <div className="container mx-auto ">
       <Hero />
+
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-6 my-10 px-2 md:px-0">
         {categories?.slice(0, 6).map((c) => (
           <CategoryCard
@@ -45,11 +45,15 @@ function Home() {
             View All →
           </Link>
         </div>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-4 px-2">
-          {data?.products.map((product) => (
-            <ProductCard product={product} key={product.id} />
-          ))}
-        </div>
+        {isLoading && <PageLoading />}
+        {isError && <PageError onRetry={() => refetch()} />}
+        {data && (
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-4 px-2">
+            {data?.products.map((product) => (
+              <ProductCard product={product} key={product.id} />
+            ))}
+          </div>
+        )}
       </section>
     </div>
   );

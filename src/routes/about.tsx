@@ -27,9 +27,9 @@ const cart = [
 ];
 function About() {
   return (
-    <div className="container mx-auto px-auto">
+    <div className="container mx-auto px-4 xl:px-0">
       <HeroAbout />
-      <div className="flex flex-col items-center my-10 px-4">
+      <div className="flex flex-col items-center my-10">
         <h1 className="mb-5 text-center text-2xl font-bold text-rose-950 md:text-3xl">
           What We Believe In
         </h1>

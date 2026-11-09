@@ -15,7 +15,7 @@ const ProductCard = ({ product }: ProductProps) => {
   );
   const toggle = useFavoriteStore((s) => s.toggle);
   return (
-    <div className="relative  max-w-sm rounded-2xl overflow-hidden border border-gray-300 bg-white/10 backdrop-blur-sm  hover:shadow">
+    <div className="relative w-full rounded-2xl overflow-hidden border border-gray-300 bg-gray-50/5  hover:shadow">
       <div className="relative p-3 w-full bg-red-100/20">
         <button
           onClick={() => toggle(product)}
@@ -57,6 +57,7 @@ const ProductCard = ({ product }: ProductProps) => {
             <Star
               strokeWidth={1.5}
               key={i}
+              size={14}
               className={
                 i < Math.round(rating)
                   ? "fill-amber-400 text-amber-400"
